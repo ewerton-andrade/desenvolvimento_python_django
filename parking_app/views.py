@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('<h1>Parking_App</h1>')
+    return render(request,'index.html') #Funcao comando para mostrar na aplicacao criada com conteudo html para formatacao da pagina escrito no arquivo index.html na pasta templates dentro da aplicacao parking_app
