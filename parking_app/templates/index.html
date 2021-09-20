@@ -30,19 +30,22 @@
     <section class="best-receipe-area">
         <div class="container">
             <div class="row">
-                {% for chave, numero_placa in placa_do_carro.items %}
+                {% if placas %}
+                {% for carro in placas %}
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
                         <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
                         <div class="receipe-content">
-                            <a href="carro.html">
-                                <h5>{{ numero_placa }}</h5>
+                            <a href="{% url 'carro' carro.id %}">
+                                <h5>{{ carro.placa_carro }}</h5>
                             </a>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+                {% else %}
+                {% endif %}
             </div>
         </div>
     </section>
